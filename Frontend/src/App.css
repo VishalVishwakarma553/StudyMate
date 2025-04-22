@@ -1,0 +1,9 @@
+@plugin "daisyui" {
+  exclude: rootcolor;
+}
+@import "tailwindcss";
+/* Ensure toast visibility */
+/* [data-testid="hot-toast-root"] {
+    z-index: 99999 !important;
+  }
+   */
