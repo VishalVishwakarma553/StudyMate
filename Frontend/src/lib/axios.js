@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "https://study-mate-alpha.vercel.app/api",
+  baseURL: "https://studymate-1pzi.onrender.com/api",
   withCredentials: true,
 });
