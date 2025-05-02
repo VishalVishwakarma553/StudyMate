@@ -15,7 +15,7 @@ const __dirname = path.resolve(); //It gives the path of backend folder
 app.use(cookieParser());// Middleware to parse cookies
 app.use(express.json()); //To parse into javascript object the data that comes from client
 app.use(cors({
-    origin: "https://study-mate-57ug4qr3p-vishalvishwkarma553-gmailcoms-projects.vercel.app/",
+    origin: "https://study-mate-alpha.vercel.app/",
     credentials: true
 }))
 app.use("/api/auth", authRoutes);
