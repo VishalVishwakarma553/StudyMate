@@ -1,6 +1,6 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "http://localhost:6001/api",
+  baseURL: "https://study-mate-57ug4qr3p-vishalvishwkarma553-gmailcoms-projects.vercel.app/api",
   withCredentials: true,
 });
