@@ -13,7 +13,7 @@ const PORT = process.env.PORT
 app.use(cookieParser());// Middleware to parse cookies
 app.use(express.json()); //To parse into javascript object the data that comes from client
 app.use(cors({
-    origin: "",
+    origin: "https://study-mate-sigma.vercel.app",
     credentials: true
 }))
 app.use("/api/auth", authRoutes);
