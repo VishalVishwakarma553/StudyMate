@@ -90,7 +90,7 @@ export const useAuthStore = create((set, get) => ({
     const {authUser} = get()
     // if user is not authenticated or user is already connected then return
     if (!authUser || get().socket?.connected) return
-    const socket = io("", {
+    const socket = io("https://studymate-13io.onrender.com", {
       query: {
         userId: authUser._id
       }
