@@ -38,3 +38,57 @@
 ```bash
 git clone https://github.com/VishalVishwakarma553/StudyMate.git
 cd StudyMate
+## 🛠️ Backend Setup
+
+1. **Navigate to the backend directory:**
+   ```bash
+   cd backend
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Configure environment variables:**
+   Create a `.env` file in the backend directory with the following:
+   ```env
+   PORT=5000
+   MONGODB_URI=your_mongodb_connection_string
+   JWT_SECRET=your_jwt_secret
+   CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
+   CLOUDINARY_API_KEY=your_cloudinary_api_key
+   CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+   ```
+
+4. **Start the server:**
+   ```bash
+   npm run start
+   ```
+
+## 💻 Frontend Setup
+
+1. **Navigate to the frontend directory:**
+   ```bash
+   cd ../frontend
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server:**
+   ```bash
+   npm run dev
+   ```
+
+## 🌐 Live Demo
+
+Experience StudyMate in action! Visit our live demo:
+
+[![StudyMate Demo](https://img.shields.io/badge/StudyMate-Live%20Demo-blue?style=for-the-badge)](https://study-mate-alpha.vercel.app/)
+
+---
+
+💡 **Feel free to fork this repository and customize it for your needs!**
