@@ -1,12 +1,40 @@
-# React + Vite
+# StudyMate 🎓🤝
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**StudyMate** is a full-stack collaborative platform designed to connect college juniors with their seniors. It allows seniors to guide juniors in their academic and career paths through one-on-one chats, mentorship, and resource sharing — all in a distraction-free environment.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 👨‍🏫 Mentor-Mentee one-on-one chat system  
+- 📁 Resource sharing (documents, links, etc.)  
+- 🔗 Real-time connection between juniors and seniors  
+- 💬 Real-time communication powered by Socket.io  
+- 🎨 Beautiful and responsive UI using TailwindCSS and DaisyUI  
+- ⚡ State management using Zustand
 
-## Expanding the ESLint configuration
+## 🚀 Tech Stack
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Frontend:**
+- React.js
+- TailwindCSS
+- DaisyUI
+- Zustand
+
+**Backend:**
+- Node.js
+- Express.js
+- MongoDB
+- Socket.io
+
+**Other Tools:**
+- Cloudinary (for media uploads)
+- JWT (Authentication)
+  
+## 📦 Installation & Setup
+
+> Before starting, make sure you have Node.js, npm, and MongoDB installed on your machine.
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/VishalVishwakarma553/StudyMate.git
+cd StudyMate
