@@ -16,7 +16,7 @@ const MentorCard = ({user}) => {
         
         <p className="font-medium"> <span className="font-medium">Qualification:</span> {user.Qualification} </p>
         <div className="card-actions  justify-center">
-          <Link to="/mentor/view-user-profile"><button onClick={() => getViewUser(user._id)} className="btn border-none bg-[#fb64b788]">View Profile</button></Link>
+          <Link to="/mentor/view-user-profile" onClick={() => getViewUser(user._id)}><button className="btn border-none bg-[#fb64b788]">View Profile</button></Link>
         </div>
       </div>
     </div>

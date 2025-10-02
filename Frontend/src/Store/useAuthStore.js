@@ -5,12 +5,13 @@ import {io} from "socket.io-client"
 
 export const useAuthStore = create((set, get) => ({
   authUser: null,
-  isCheckingAuth: true,
+  isCheckingAuth: false,
   updatingProfilePhoto: false,
   updatingDetails: false,
   onlineUsers: [],
 
   checkAuth: async () => {
+    set({isCheckingAuth:true})
     try {
       const res = await axiosInstance.get("/auth/check");
 

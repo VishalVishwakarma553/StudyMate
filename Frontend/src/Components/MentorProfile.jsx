@@ -1,9 +1,25 @@
 import Footer from "./Footer";
 import { useAuthStore } from "../Store/useAuthStore";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import MentorProfileSkeleton from "./MentorProfileSkeleton";
+
 const MentorProfile = () => {
-  const { authUser } = useAuthStore();
-  // If problem is still occuring of not coming information automatically add useEffect
+  const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
+
+  useEffect(()=>{
+    checkAuth()
+  },[checkAuth])
+
+  if (isCheckingAuth) {
+    return (
+      <>
+        <MentorProfileSkeleton />
+        <Footer />
+      </>
+    );
+  }
+
   return (
     <div className="bg-[#1a1b41] ">
       <div className="  flex mx-3 justify-center align-middle py-15">
@@ -11,18 +27,18 @@ const MentorProfile = () => {
           <div className="card-body space-y-2">
             <div className="avatar flex justify-center">
               <div className="w-32 rounded">
-                <img src={authUser.profilePic || "/avatar.png"} />
+                <img src={authUser?.profilePic || "/avatar.png"} />
               </div>
             </div>
 
-            <h3 className="text-2xl text-center">{authUser.fullName}</h3>
-            
-            <p className="text-base"><span className="font-medium">Expertise:</span>{authUser.Expertise}</p>
+            <h3 className="text-2xl text-center">{authUser?.fullName}</h3>
+
+            <p className="text-base"><span className="font-medium">Expertise:</span>{authUser?.Expertise}</p>
             <section>
               <h3 className="text-accent  bg-clip-text font-bold text-2xl">
                 About
               </h3>
-              <p className="text-[16px]">{authUser.About}
+              <p className="text-[16px]">{authUser?.About}
               </p>
             </section>
             <div className="card-actions  justify-center">
