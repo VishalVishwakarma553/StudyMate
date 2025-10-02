@@ -1,24 +1,9 @@
 import Footer from "./Footer";
 import { useAuthStore } from "../Store/useAuthStore";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import MentorProfileSkeleton from "./MentorProfileSkeleton";
 
 const MentorProfile = () => {
-  const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
-
-  useEffect(()=>{
-    checkAuth()
-  },[checkAuth])
-
-  if (isCheckingAuth) {
-    return (
-      <>
-        <MentorProfileSkeleton />
-        <Footer />
-      </>
-    );
-  }
+  const { authUser} = useAuthStore();
 
   return (
     <div className="bg-[#1a1b41] ">

@@ -5,7 +5,7 @@ import {io} from "socket.io-client"
 
 export const useAuthStore = create((set, get) => ({
   authUser: null,
-  isCheckingAuth: false,
+  isCheckingAuth: true,
   updatingProfilePhoto: false,
   updatingDetails: false,
   onlineUsers: [],

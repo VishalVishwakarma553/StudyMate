@@ -1,8 +1,26 @@
 import Footer from "./Footer";
 import {getUsersStore} from "../Store/getUsersStore"
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import MentorProfileSkeleton from "./MentorProfileSkeleton";
+import { useEffect } from "react";
+
 const ViewProfile = () => {
-  const {viewProfileUser} = getUsersStore()
+  const {viewProfileUser, isViewProfileLoading, getViewUser} = getUsersStore()
+  const location = useLocation()
+  const {id} = location.state
+  useEffect(() => {
+    getViewUser(id)
+  }, [id])
+
+  if (isViewProfileLoading || !viewProfileUser) {
+    return (
+      <>
+        <MentorProfileSkeleton />
+        <Footer />
+      </>
+    )
+  }
+
   return (
     <div className="bg-[#1a1b41] ">
       <div className="  flex mx-3 justify-center align-middle py-15">

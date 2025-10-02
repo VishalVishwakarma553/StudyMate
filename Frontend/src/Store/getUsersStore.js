@@ -7,31 +7,35 @@ import { useAuthStore } from "./useAuthStore";
 export const getUsersStore = create((set, get) => ({
     users: [],
     messages: [],
-    viewProfileUser: JSON.parse(sessionStorage.getItem("viewProfileUser")) || null,
+    viewProfileUser: null,
     isUsersGetting: false,
+    isViewProfileLoading: false,
 
     getUsers: async () => {
         set({isUsersGetting: true})
         try {
             const res = await axiosInstance("/getUsers/allUsers")
             set({users: res.data})
-            
+
         } catch(error) {
             console.log("Error in loading users")
             toast.error(error.response.data.message)
         } finally {
             set({isUsersGetting: false})
         }
-    },  
+    },
 
     getViewUser: async (viewProfileUserId) => {
+        set({isViewProfileLoading: true})
         try {
             const res = await axiosInstance(`/getUsers/viewProfileUser/${viewProfileUserId}`)
             set({viewProfileUser : res.data})
-            sessionStorage.setItem("viewProfileUser",JSON.stringify(res.data))
+            
         }catch(error){
             console.log("Error in finding view user profile")
             toast.error(error.response.data.message)
+        } finally {
+            set({isViewProfileLoading: false})
         }
     },
 
