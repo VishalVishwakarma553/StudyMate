@@ -87,7 +87,7 @@ cd StudyMate
 
 Experience StudyMate in action! Visit our live demo:
 
-[![StudyMate Demo](https://img.shields.io/badge/StudyMate-Live%20Demo-blue?style=for-the-badge)](https://study-mate-alpha.vercel.app/)
+[![StudyMate Demo](https://img.shields.io/badge/StudyMate-Live%20Demo-blue?style=for-the-badge)](https://study-mate-sigma.vercel.app)
 
 ---
 
