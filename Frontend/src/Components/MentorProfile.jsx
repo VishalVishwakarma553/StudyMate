@@ -1,9 +1,36 @@
 import Footer from "./Footer";
-import { useAuthStore } from "../Store/useAuthStore";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import MentorProfileSkeleton from "./MentorProfileSkeleton";
+import { axiosInstance } from "../lib/axios";
 
 const MentorProfile = () => {
-  const { authUser} = useAuthStore();
+  const [profileLoading, setProfileLoading] = useState(true);
+  const [authUser, setAuthUser] = useState(null)
+  useEffect(() => {
+    const fetchUser = async () => {
+      setProfileLoading(true)
+      try {
+        const res = await axiosInstance.get("/auth/check");
+        setAuthUser(res?.data);
+      } catch (error) {
+        toast.error("Something went wrong")
+      }finally{
+        setProfileLoading(false)
+      }
+    };
+    fetchUser()
+  }, []);
+
+  if(profileLoading || !authUser){
+    return (
+      <>
+      <MentorProfileSkeleton />
+      <Footer />
+      </>
+    )
+  }
 
   return (
     <div className="bg-[#1a1b41] ">
@@ -18,18 +45,23 @@ const MentorProfile = () => {
 
             <h3 className="text-2xl text-center">{authUser?.fullName}</h3>
 
-            <p className="text-base"><span className="font-medium">Expertise:</span>{authUser?.Expertise}</p>
+            <p className="text-base">
+              <span className="font-medium">Expertise:</span>
+              {authUser?.Expertise}
+            </p>
             <section>
               <h3 className="text-accent  bg-clip-text font-bold text-2xl">
                 About
               </h3>
-              <p className="text-[16px]">{authUser?.About}
-              </p>
+              <p className="text-[16px]">{authUser?.About}</p>
             </section>
             <div className="card-actions  justify-center">
-              <Link to="/updateProfile"> <button className="btn border-none bg-[#fb64b788]">
-                Update Profile
-              </button></Link>
+              <Link to="/updateProfile">
+                {" "}
+                <button className="btn border-none bg-[#fb64b788]">
+                  Update Profile
+                </button>
+              </Link>
             </div>
           </div>
         </div>
