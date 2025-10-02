@@ -7,7 +7,9 @@ const server = http.createServer(app)
 
 const io = new Server(server, {
     cors: {
-        origin:["https://study-mate-sigma.vercel.app"]
+        origin: process.env.NODE_ENV === 'production'
+            ? process.env.FRONTEND_URL_PROD
+            : process.env.FRONTEND_URL_DEV
     }
 })
 

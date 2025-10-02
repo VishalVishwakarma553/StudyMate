@@ -1,6 +1,8 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "https://studymate-13io.onrender.com/api",
+  baseURL: import.meta.env.MODE === "development"
+    ? "http://localhost:6001/api"
+    : `${import.meta.env.VITE_API_URL}/api`,
   withCredentials: true,
 });
